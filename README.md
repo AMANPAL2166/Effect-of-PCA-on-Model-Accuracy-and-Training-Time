@@ -1,18 +1,11 @@
-Effect of PCA on Model Accuracy and Training Time
+# Effect of PCA on Model Accuracy and Training Time
 
-A comparative study on how Principal Component Analysis (PCA) impacts the performance and computational cost of popular Machine Learning models.
+## A practical experiment analyzing how Principal Component Analysis (PCA) impacts
+## accuracy, training speed, and dimensionality across different ML models.
 
-🧠 Project Overview
+# Overview
 
-This project analyzes the effect of dimensionality reduction using PCA on:
-
-Model Accuracy
-
-Training Time
-
-Components vs Performance Trade-off
-
-Three ML models were tested:
+This project evaluates the effect of PCA on three supervised models:
 
 Logistic Regression
 
@@ -20,128 +13,33 @@ Support Vector Classifier (SVC)
 
 Random Forest Classifier
 
-The goal is to understand whether PCA improves performance, reduces overfitting, and speeds up training.
+We compare performance across multiple PCA component sizes
+to identify the best trade-off between speed and accuracy.
 
-🏗️ Methodology
-1️⃣ Preprocessing
+Standardize features using StandardScaler
 
-Standard Scaling (StandardScaler)
+Apply PCA (5, 10, 15, 20, 25, 30 components)
 
-PCA on multiple component counts
+Train 3 ML models on each PCA output
 
-Train-test split
-
-Iterative experiments for consistency
-
-2️⃣ Models Evaluated
-
-Logistic Regression
-
-SVM (RBF)
-
-Random Forest
-
-3️⃣ Metrics Used
+Measure
 
 Accuracy
 
-Training Time
+Training time
 
-Variance Explained
+Generate plots for comparison
 
-Component–Performance Curves
+# Tech Stack
 
-4️⃣ Visualizations
+Python, NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn
 
-Accuracy vs Model
+# 📝 Key Insights
 
-Training Time vs Components
+PCA significantly reduces training time
 
-Accuracy vs Training Time
+PCA preserves accuracy for linear models
 
-PCA Variance Explained Curve
+Random Forest does not improve with PCA
 
-📈 Key Results
-✔️ Logistic Regression
-
-Best accuracy after PCA
-
-PCA preserved linear separability
-
-Training time significantly reduced
-
-✔️ SVM
-
-Slight drop in accuracy
-
-PCA improved training speed
-
-Non-linear models lose performance with PCA
-
-✔️ Random Forest
-
-Accuracy decreased
-
-PCA didn’t improve trees
-
-Training time benefited slightly
-
-⭐ Overall Conclusion
-
-PCA improves training speed for all models.
-PCA preserves accuracy only for linear models.
-Too many or too few components → accuracy drops.
-Optimal region ≈ 95% variance retention.
-
-📊 Professional Plots
-Accuracy Comparison
-
-Shows how different models behave after PCA.
-
-Training Time vs Components
-
-Demonstrates how PCA drastically reduces training cost.
-
-Accuracy vs Training Time
-
-Helps visualize the trade-off between performance and speed.
-
-PCA Explained Variance Curve
-
-Shows the ideal number of components needed to retain information.
-
-(Plots are generated via the code in the notebook.)
-
-📁 Tech Stack
-
-Python
-
-Scikit-learn (PCA, ML models)
-
-Matplotlib & Seaborn
-
-NumPy / Pandas
-
-🧪 How to Run
-pip install numpy pandas scikit-learn matplotlib seaborn
-
-
-Run the notebook:
-
-jupyter notebook pca_analysis.ipynb
-
-📌 Future Work
-
-Compare PCA with t-SNE / UMAP
-
-Try PCA before Deep Learning
-
-Hyperparameter tuning with PCA
-
-Analyze bias–variance changes
-
-👤 Author
-
-Aman Pal
-B.S. Student, IIT Patna
-Focus: Machine Learning, NLP Research
+Optimal results around 90–95% explained variance
