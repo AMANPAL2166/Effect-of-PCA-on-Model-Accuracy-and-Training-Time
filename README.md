@@ -43,3 +43,4 @@ PCA preserves accuracy for linear models
 Random Forest does not improve with PCA
 
 Optimal results around 90–95% explained variance
+
